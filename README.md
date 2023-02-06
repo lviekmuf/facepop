@@ -1,5 +1,7 @@
 # Face pop
 
+**App URL**: https://github.com/lviekmuf/facepop
+
 ## Available Scripts
 
 In the project directory, you can run:
