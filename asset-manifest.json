@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/facepop/static/css/main.8ed44afb.css",
-    "main.js": "/facepop/static/js/main.ea982944.js",
+    "main.css": "/facepop/static/css/main.03ab1fea.css",
+    "main.js": "/facepop/static/js/main.a43953fe.js",
     "index.html": "/facepop/index.html",
     "static/media/muted.svg": "/facepop/static/media/muted.4be3874a2260c6cc8c3209803715f90d.svg",
     "static/media/unmuted.svg": "/facepop/static/media/unmuted.cf09bb531d48429ed160469d8989bdb4.svg",
     "static/media/pause.svg": "/facepop/static/media/pause.1ecd03c33fc1ca1fdb740c3f6a9913d6.svg",
     "static/media/play.svg": "/facepop/static/media/play.1087788e5978e11b0a55e71c955202f5.svg",
     "static/media/hide.svg": "/facepop/static/media/hide.e3b5a9078c1b9da1f0ba79dc761d32b6.svg",
-    "main.8ed44afb.css.map": "/facepop/static/css/main.8ed44afb.css.map",
-    "main.ea982944.js.map": "/facepop/static/js/main.ea982944.js.map"
+    "main.03ab1fea.css.map": "/facepop/static/css/main.03ab1fea.css.map",
+    "main.a43953fe.js.map": "/facepop/static/js/main.a43953fe.js.map"
   },
   "entrypoints": [
-    "static/css/main.8ed44afb.css",
-    "static/js/main.ea982944.js"
+    "static/css/main.03ab1fea.css",
+    "static/js/main.a43953fe.js"
   ]
 }
