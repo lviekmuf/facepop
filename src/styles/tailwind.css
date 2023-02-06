@@ -1,15 +1,74 @@
-@tailwind base;
-
-/* Your own custom base styles */
-
-/* Start purging... */
 @tailwind components;
-/* Stop purging. */
+.player {
+    position: fixed;
+    left: 20px;
+    overflow: hidden;
+    bottom: 20px;
+    box-shadow: #333c52 0 3px 8px;
+    transition: all 0.2s ease-out;
+    border-radius: 8px;
+}
 
-/* Your own custom component styles */
+.player-lg {
+    height: calc(100vh - 40px);
+    width: calc(33vw - 20px);
+}
 
-/* Start purging... */
-@tailwind utilities;
-/* Stop purging. */
+.player-sm {
+    height: 200px;
+    width: 100px;
+}
 
-/* Your own custom utilities */
+.player-sm:hover {
+    height: 220px;
+    width: 120px;
+}
+
+.player-button {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.player-controls {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.button-icon {
+    height: 31px;
+    width: 31px
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 40px;
+    width: 40px;
+}
+
+.player iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+}
+
+.video-progress progress[value] {
+    background-color: whiteSmoke;
+    border-radius: 3px;
+    border: none;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .5) inset;
+}
