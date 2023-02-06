@@ -1,4 +1,22 @@
+import Player from "./components/Player";
+
+// title: string
+// description: string
+// callToActionUrl: string
+// callToActionText: string
+
 function App() {
+  const url = 'https://www.youtube.com/watch?v=rZf6Jl3L-Ac&ab_channel=RohataZhaba'
+  const title = 'answerly'
+  const callToActionText = 'Clcck me'
+  const callToActionUrl = 'https://answerly.io/facepop/'
+  const description = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,`
+  const videoData = {
+    title,
+    callToActionUrl,
+    callToActionText,
+    description,
+  }
   return (
     <div className="flex flex-col items-center justify-center h-screen text-red-300 bg-gradient-to-br from-gray-300 via-teal-700 to-gray-800">
       <div className="flex items-center animate-bounce">
@@ -37,6 +55,7 @@ function App() {
         >
           Learn Tailwind CSS v3.x
         </a>
+        <Player videoUrl={url} videoData={videoData}/>
       </div>
     </div>
   );
