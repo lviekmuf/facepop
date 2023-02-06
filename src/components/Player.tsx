@@ -88,7 +88,6 @@ const Player = (props: Props) => {
         duration={playedPercents}
         setPlayedSeconds={rewindVideo}
       /> : ""}
-      {/* {!duration ? <div className="player-button text-white text-center">Loading...</div> : ""} */}
     </div>
   );
 }
