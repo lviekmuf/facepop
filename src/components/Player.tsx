@@ -14,6 +14,7 @@ interface Props {
   videoUrl: string
   videoData?: videoData
 }
+
 const Player = (props: Props) => {
   const { videoUrl, videoData } = props
   const [muted, setMuted] = useState(false)
@@ -44,33 +45,36 @@ const Player = (props: Props) => {
   const playerDuration = playerRef.current?.getDuration()
   const handleMute = () => setMuted(!muted)
   const handlePlaying = () => setPlaying(!playing)
-  useEffect( () => { 
-    if(playerRef.current?.getSecondsLoaded()) {
+  useEffect(() => {
+    if (playerRef.current?.getSecondsLoaded()) {
       const duration = playerDuration || 0
       setDuration(duration)
     }
-    },
-  [playerDuration])
+  },
+    [playerDuration])
 
   const playedPercents = Math.round(playedSeconds / duration * 100)
 
   const rewindVideo = (percents: number) => {
-    const seconds = Math.round(percents / 100 * duration) 
-    playerRef.current?.seekTo(seconds)	
+    const seconds = Math.round(percents / 100 * duration)
+    playerRef.current?.seekTo(seconds)
     setPlayedSeconds(seconds)
   }
 
   return (
-    <div className={`player ${isFull ? 'player-lg' : 'player-sm'}`} style={{opacity: playerRef.current?.getSecondsLoaded() || duration ? '100%': '0%'}}>
+    <div className={`player ${isFull ? 'player-lg' : 'player-sm'}`} style={{ opacity: playerRef.current?.getSecondsLoaded() || duration || true ? '100%' : '0%' }}>
       <ReactPlayer
         ref={playerRef}
         muted={!isFull || muted}
         url={videoUrl}
         width={width}
         playing={playing || !isFull}
-        onProgress={({playedSeconds}) => setPlayedSeconds(playedSeconds)}
+        onProgress={({ playedSeconds }) => setPlayedSeconds(playedSeconds)}
         height={height}
         loop
+        onError={e => {
+          console.log(playerRef.current?.context)
+        }}
         config={config}
       />
       {!isFull ? <div className="player-button" onClick={handleOpenPlayer}>
@@ -87,7 +91,7 @@ const Player = (props: Props) => {
         duration={playedPercents}
         setPlayedSeconds={rewindVideo}
       /> : ""}
-       {/* {!duration ? <div className="player-button text-white text-center">Loading...</div> : ""} */}
+      {/* {!duration ? <div className="player-button text-white text-center">Loading...</div> : ""} */}
     </div>
   );
 }

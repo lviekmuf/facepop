@@ -1,16 +1,11 @@
 import Player from "./components/Player";
 
-// title: string
-// description: string
-// callToActionUrl: string
-// callToActionText: string
-
 function App() {
-  const url = 'https://www.youtube.com/watch?v=rZf6Jl3L-Ac&ab_channel=RohataZhaba'
-  const title = 'Try for free'
-  const callToActionText = 'Click me'
-  const callToActionUrl = 'https://www.youtube.com/watch?v=rZf6Jl3L-Ac&ab_channel=RohataZhaba'
-  const description = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,`
+  const url = 'https://synthesia-ttv-data.s3-eu-west-1.amazonaws.com/video_data/ef16d46f-d0c8-4090-af78-36673b73ca66/transfers/target_transfer.mp4'
+  const title = 'Test task'
+  const callToActionText = 'Github'
+  const callToActionUrl = 'https://github.com/lviekmuf/facepop'
+  const description = `Hi, Lucas! This is a test task for developing a FacePop widget for customer service and business. Written using React and TailwindCSS.`
   const videoData = {
     title,
     callToActionUrl,
