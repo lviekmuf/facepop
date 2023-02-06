@@ -1,4 +1,4 @@
-# Smart Host
+# Face pop
 
 ## Available Scripts
 
