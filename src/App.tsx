@@ -7,9 +7,9 @@ import Player from "./components/Player";
 
 function App() {
   const url = 'https://www.youtube.com/watch?v=rZf6Jl3L-Ac&ab_channel=RohataZhaba'
-  const title = 'answerly'
-  const callToActionText = 'Clcck me'
-  const callToActionUrl = 'https://answerly.io/facepop/'
+  const title = 'Try for free'
+  const callToActionText = 'Click me'
+  const callToActionUrl = 'https://www.youtube.com/watch?v=rZf6Jl3L-Ac&ab_channel=RohataZhaba'
   const description = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,`
   const videoData = {
     title,
