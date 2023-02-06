@@ -16,7 +16,7 @@ interface Props {
 }
 const Player = (props: Props) => {
   const { videoUrl, videoData } = props
-  const [muted, setMuted] = useState(true)
+  const [muted, setMuted] = useState(false)
   const [playing, setPlaying] = useState(true)
   const [playedSeconds, setPlayedSeconds] = useState(0)
   const [isFull, setFull] = useState(false)
@@ -41,14 +41,16 @@ const Player = (props: Props) => {
   const handleHidePlayer = () => {
     setFull(false)
   }
+  const playerDuration = playerRef.current?.getDuration()
   const handleMute = () => setMuted(!muted)
   const handlePlaying = () => setPlaying(!playing)
   useEffect( () => { 
-      const duration = playerRef.current?.getDuration() || 0
+    if(playerRef.current?.getSecondsLoaded()) {
+      const duration = playerDuration || 0
       setDuration(duration)
-      console.log(duration)
+    }
     },
-  [duration])
+  [playerDuration])
 
   const playedPercents = Math.round(playedSeconds / duration * 100)
 
@@ -57,14 +59,15 @@ const Player = (props: Props) => {
     playerRef.current?.seekTo(seconds)	
     setPlayedSeconds(seconds)
   }
+
   return (
-    <div className={`player ${isFull ? 'player-lg' : 'player-sm'}`} style={{opacity: playerRef.current?.getSecondsLoaded() ? '100%': '0%'}}>
+    <div className={`player ${isFull ? 'player-lg' : 'player-sm'}`} style={{opacity: playerRef.current?.getSecondsLoaded() || duration ? '100%': '0%'}}>
       <ReactPlayer
         ref={playerRef}
-        muted={muted && !isFull}
+        muted={!isFull || muted}
         url={videoUrl}
         width={width}
-        playing={playing}
+        playing={playing || !isFull}
         onProgress={({playedSeconds}) => setPlayedSeconds(playedSeconds)}
         height={height}
         loop
