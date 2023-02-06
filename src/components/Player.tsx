@@ -72,9 +72,6 @@ const Player = (props: Props) => {
         onProgress={({ playedSeconds }) => setPlayedSeconds(playedSeconds)}
         height={height}
         loop
-        onError={e => {
-          console.log(playerRef.current?.context)
-        }}
         config={config}
       />
       {!isFull ? <div className="player-button" onClick={handleOpenPlayer}>
