@@ -12,7 +12,7 @@
 
 .player-lg {
     height: calc(100vh - 40px);
-    width: calc(33vw - 20px);
+    width: max(min(320px, 95vw), calc(33vw - 20px));
 }
 
 .player-sm {
