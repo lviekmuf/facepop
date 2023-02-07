@@ -1,6 +1,6 @@
 # Face pop
 
-**App URL**: https://github.com/lviekmuf/facepop
+**App URL**: [https://github.com/lviekmuf/facepop](https://lviekmuf.github.io/facepop/)
 
 ## Available Scripts
 
