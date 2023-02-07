@@ -38,6 +38,11 @@ const PlayerControllers = (props: Props) => {
     } = props
     const scrollRef = useRef<HTMLDivElement | null>(null)
 
+    const clickHandler = (callback: () => void) => (event: React.MouseEvent<HTMLDivElement>) => { 
+        event.stopPropagation()
+        callback()
+    }
+
     const onPlayedClick = (event: React.MouseEvent<HTMLDivElement>) => {
         event.stopPropagation()
         if (event.target instanceof HTMLElement) {
@@ -48,18 +53,12 @@ const PlayerControllers = (props: Props) => {
     }
     return (
         <div className="player-controls flex flex-col justify-end " onClick={setPlaying}>
-            <div className="flex justify-end w-full absolute p-2 top-0"><img className="button-icon" src={hideIcon} alt="" onClick={(e) => {
-            e.stopPropagation()
-            hideVideo()
-        }} /></div>
+            <div className="flex justify-end w-full absolute p-2 top-0"><img className="button-icon" src={hideIcon} alt="" onClick={clickHandler(hideVideo)} /></div>
             <div className="p-4 flex justify-between flex-row">
                 <Description title={videoData?.title} description={videoData?.description} />
                 <div className="w-40 flex justify-center flex-col items-end	">
-                    <img src={isMuted ? mutedIcon : unmutedIcon} className="button-icon" alt="" onClick={(e) => {
-                        e.stopPropagation()
-                        setMuted()
-                    }} />
-                    <img src={isPlaying ? pauseIcon : playIcon} className="button-icon" alt="" onClick={setPlaying} />
+                    <img src={isMuted ? mutedIcon : unmutedIcon} className="button-icon" alt="" onClick={clickHandler(setMuted)} />
+                    <img src={isPlaying ? pauseIcon : playIcon} className="button-icon" alt="" onClick={clickHandler(setPlaying)} />
                 </div>
             </div>
             <a href={videoData?.callToActionUrl} className="text-center bg-blue-800 p-4 text-white text-2xl m-4 box-border rounded-full">{videoData?.callToActionText}</a>
